@@ -18,6 +18,7 @@ to organized dated folders with full error handling and logging.
 - Cisco IOS (tested on EVE-NG lab)
 
 ## Project Structure
+```
 network-config-backup-tool/
 │
 ├── backup_tool.py          # Main backup script
@@ -26,11 +27,12 @@ network-config-backup-tool/
 ├── README.md               # This file
 │
 └── backups/
-└── 2026-04-22/
-├── config_192.168.138.130.txt
-├── config_192.168.138.135.txt
-├── config_192.168.138.136.txt
-└── backup_log.txt
+    └── 2026-04-22/
+        ├── config_192.168.138.130.txt
+        ├── config_192.168.138.135.txt
+        ├── config_192.168.138.136.txt
+        └── backup_log.txt
+```
 
 
 ## How It Works
@@ -69,17 +71,20 @@ python backup_tool.py
 ```
 
 ### Output
-
-
+```
 =============================================
-NETWORK CONFIG BACKUP TOOL
-✅ 192.168.138.130 — backed up
-✅ 192.168.138.135 — backed up
-✅ 192.168.138.136 — backed up
-❕ 192.168.1.99    — unreachable (timeout)
-Success : 3
-Failed  : 1
-Folder  : backups/2026-04-22
+       NETWORK CONFIG BACKUP TOOL
+=============================================
+  ✅ 192.168.138.130 — backed up
+  ✅ 192.168.138.135 — backed up
+  ✅ 192.168.138.136 — backed up
+  ❕ 192.168.1.99    — unreachable (timeout)
+=============================================
+  Success : 3
+  Failed  : 1
+  Folder  : backups/2026-04-22
+=============================================
+```
 
 ## Author
 - Name: Rehan
