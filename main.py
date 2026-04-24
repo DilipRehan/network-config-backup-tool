@@ -9,6 +9,7 @@ routers = DEVICES
 success = []
 failed = []
 
+
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 folder = f"backup_config/running_config_{timestamp}"
 os.makedirs(folder)
@@ -29,9 +30,12 @@ for router in routers:
             f.write(f"Backup   : {timestamp}\n")
             f.write("=" * 45 + "\n")
             f.write(output)
-            
+        
+        size = os.stat(filename).st_size
+        size_kb = size/1024
+
         success.append(router['host'])
-        print(f"  ✅ {router['host']} — backed up")
+        print(f"  ✅ {router['host']} — backed up | {size_kb:.2f} KB")
         connection.disconnect()
 
 
